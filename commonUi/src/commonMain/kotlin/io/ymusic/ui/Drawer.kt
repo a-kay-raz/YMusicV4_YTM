@@ -66,7 +66,7 @@ fun AppDrawer(
 ) {
     ModalDrawerSheet(
         modifier = Modifier.width(300.dp),
-        drawerContainerColor = DesignColors.Surface,
+        drawerContainerColor = GlassBarFill,
         drawerShape = RoundedCornerShape(0.dp),
     ) {
         Column(Modifier.fillMaxHeight()) {

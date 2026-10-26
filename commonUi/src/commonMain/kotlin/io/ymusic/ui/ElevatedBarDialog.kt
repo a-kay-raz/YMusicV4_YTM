@@ -73,8 +73,8 @@ fun ElevatedBarDialog(
                 420.dp
             }
             Surface(
-                shape = RoundedCornerShape(4.dp),
-                color = DesignColors.Surface,
+                shape = RoundedCornerShape(16.dp),
+                color = GlassBarFill,
                 modifier = Modifier
                     .then(if (wide) Modifier.padding(horizontal = 24.dp) else Modifier)
                     .widthIn(min = 280.dp, max = maxWidth),

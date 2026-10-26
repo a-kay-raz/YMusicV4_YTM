@@ -1,6 +1,5 @@
 package io.ymusic.ui
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.ColumnScope
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -29,12 +28,12 @@ internal fun SettingsSection(title: StringResource, content: @Composable ColumnS
             bottom = DesignSpacing.Space8,
         ),
     )
-    Column(
-        Modifier
+    GlassSurface(
+        modifier = Modifier
             .fillMaxWidth()
-            .padding(horizontal = DesignSpacing.SettingsCardInset)
-            .clip(RoundedCornerShape(DesignSpacing.SettingsCardCorner))
-            .background(DesignColors.SettingsCard),
-        content = content,
-    )
+            .padding(horizontal = DesignSpacing.SettingsCardInset),
+        shape = RoundedCornerShape(DesignSpacing.SettingsCardCorner),
+    ) {
+        Column(Modifier.fillMaxWidth(), content = content)
+    }
 }

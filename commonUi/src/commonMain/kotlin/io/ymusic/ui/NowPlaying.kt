@@ -306,7 +306,7 @@ fun MiniPlayer(
             }
             Column(
                 Modifier.weight(1f)
-                    .background(DesignColors.SurfaceDim)
+                    .background(GlassBarFill)
                     .onSizeChanged { colH = it.height },
             ) {
                 LinearProgressIndicator(
