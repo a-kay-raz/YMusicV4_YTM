@@ -129,21 +129,16 @@ val DarkDesignColors = DesignPalette(
     OutlineSoft = Color(0xFF525252),
     Divider = Color(0xFF2A2A2A),
     DividerMini = Color(0xFF2D2D2D),
-    Surface = Color(0xFF272727),
-    SurfaceDim = Color(0xFF313131),
-    SurfaceElevated = Color(0xFF292929),
-    SettingsCard = Color(0xFF333333),
-    FieldPill = Color(0xFF3F3F3F),
-    BrandGreen = Color(0xFF1DB954),
-)
-
-/** Dark with every ground pure black, for OLED screens. */
-val AmoledDesignColors = DarkDesignColors.copy(
     Surface = Color.Black,
     SurfaceDim = Color.Black,
     SurfaceElevated = Color.Black,
     SettingsCard = Color.Black,
+    FieldPill = Color(0xFF3F3F3F),
+    BrandGreen = Color(0xFF1DB954),
 )
+
+/** Dark now uses the AMOLED pure-black grounds, so the two themes are the same palette. */
+val AmoledDesignColors = DarkDesignColors
 
 /** [AppSettings.theme] value → whether the UI is dark; "" follows the system. */
 fun isDarkTheme(theme: String, systemDark: Boolean): Boolean = when (theme) {
