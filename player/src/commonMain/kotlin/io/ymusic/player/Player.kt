@@ -76,6 +76,9 @@ interface Player {
     /** Insert right after the current item. */
     fun addToPlayNext(items: List<PlayableItem>)
 
+    /** Move the queued item at [index] to play next, after anything already queued to play next. */
+    fun moveToPlayNext(index: Int)
+
     fun move(from: Int, to: Int)
 
     /** Move the `[fromIndex, toIndex)` block so it starts at [newIndex] (post-removal indexing —
@@ -199,6 +202,12 @@ interface Player {
 
     /** Pictures presented by the active engine since attach. 0 when the backend has no counter. */
     fun presentedFrames(): Int = 0
+
+    /** Pictures the active engine dropped for missing their time since its current load. 0 when it has no counter. */
+    fun droppedFrames(): Int = 0
+
+    /** The active engine's video decoder, e.g. "hw vp9"; null when unknown. Main thread: off it the engine may free its host mid-call. */
+    fun videoDecoder(): String? = null
 
     /** Releases both engines and stops all internal work. The instance is unusable afterwards. */
     fun release()
